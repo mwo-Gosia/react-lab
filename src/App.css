@@ -28,6 +28,9 @@
   color: #61dafb;
 }
 
+.Text {font-size: calc(15px);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
