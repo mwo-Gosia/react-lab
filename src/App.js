@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
 import "milligram";
+import LoginForm from "./LoginForm";
 
 function App() {
     const [email, setEmail] = useState('fracz@agh.edu.pl');
@@ -21,7 +22,7 @@ function App() {
     }
 
     return (
-        <div>
+        <div className="container">
             <h1>System do zapisów na zajęcia</h1>
             {/*<h2>Twój e-mail to {email}</h2>*/}
             {/*<p>Twój e-mail wielkimi literami to {email.toUpperCase()}</p>*/}
@@ -30,10 +31,7 @@ function App() {
             {/*<button type="button" onClick={() => alert(email)}>*/}
             {/*    Wyświetl mój e-mail w alercie*/}
             {/*</button>*/}
-            { ! isLoggedIn && <div>
-                <p>Zaloguj się e-mailem <input type="text" onChange={(event) => setEmail(event.target.value)}/>
-                    <button onClick={() => setIsLoggedIn(true)}>Zaloguj się</button></p>
-            </div>}
+            { ! isLoggedIn && <LoginForm onLogin={() => {}}/> }
             { isLoggedIn && <div>
                 <h1>Witaj {email}</h1>
                 <a onClick={() => setIsLoggedIn(false)}>Wyloguj</a>
